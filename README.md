@@ -1,73 +1,125 @@
-# React + TypeScript + Vite
+# NewsToday
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern news feed application built with React that displays the latest headlines using the **NEWSDATA.IO API**. Users can browse top news, search for specific topics, and filter articles by category. The app also handles loading and error states gracefully.
 
-Currently, two official plugins are available:
+**Live Demo:** [https://news-today-eta.vercel.app/](https://news-today-eta.vercel.app/)  
+**GitHub Repository:** [https://github.com/Anikhe00/NewsToday](https://github.com/Anikhe00/NewsToday)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Fetches and displays the latest headlines using the DATANEWS.IO API
+- Search functionality to find articles by keyword
+- Category filter for news topics (e.g., Technology, Sports, Health)
+- Loading and error states for improved UX
+- Responsive design for mobile and desktop
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Technologies Used
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Frontend:** React, React Router, React Query, TypeScript
+- **Styling:** Tailwind CSS
+- **Icons:** React Icons
+- **Deployment:** Vercel
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or above)
+- npm or yarn
+- A DATANEWS.IO API key (get it from [https://newsdata.io/](https://newsdata.io/))
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/Anikhe00/NewsToday.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Navigate to the project directory:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+cd NewsToday
 ```
+
+3. Install dependencies
+
+```bash
+npm install
+# or
+yarn install
+```
+
+4. Create a .env file in the root directory and add your API Key:
+
+```bash
+VIEW_API_KEY=YOUR_API_KEY
+```
+
+5. Start the development server:
+
+```bash
+npm start
+# or
+yarn start
+```
+
+---
+
+## API Endpoint Example
+
+1. Fetch latest news:
+
+```http
+https://newsdata.io/api/1/latest?apikey=YOUR_API_KEY&language=en&removeduplicate=1
+```
+
+2. Search for articles:
+
+```http
+https://newsdata.io/api/1/latest?apikey=YOUR_API_KEY&q=searchQuery&language=en&removeduplicate=1
+```
+
+3. Filter by category:
+
+```http
+https://newsdata.io/api/1/latest?apikey=YOUR_API_KEY&language=en&category=categoryQuery&removeduplicate=1
+```
+
+---
+
+## Folder Structure
+
+NewsToday/
+├─ public/
+├─ src/
+│ ├─ components/
+│ ├─ pages/
+│ ├─ api/
+│ ├─ assets/
+│ ├─ App.jsx
+│ └─ index.jsx
+├─ .env
+├─ package.json
+└─ README.md
+
+---
+
+## Deployment
+
+This project is deployed on Vercel: [https://news-today-eta.vercel.app/](https://news-today-eta.vercel.app/)
+
+---
+
+## 👩‍💻 Author
+
+**Shakirat Akanji**
+
+- GitHub: [@Anikhe00](https://github.com/Anikhe00)
+- LinkedIn: [Shakirat Akanji](https://www.linkedin.com/in/shakirat-akanji/)
