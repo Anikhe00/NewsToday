@@ -14,20 +14,14 @@ const ArticlePage = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [article]);
 
-  const otherArticles = articles?.filter((a) => a.id !== article?.id) || [];
+  const otherArticles =
+    articles?.filter((a) => a.article_id !== article?.article_id) || [];
 
   let relatedArticles = otherArticles.filter(
-    (a) => a.category[0].toLowerCase() === article?.category[0]?.toLowerCase()
+    (a) =>
+      a.category?.[0]?.toLowerCase() === article?.category?.[0]?.toLowerCase()
   );
 
-  if (relatedArticles.length === 0 && article?.category[0]) {
-    relatedArticles = otherArticles.filter(
-      (a) =>
-        a.category[0]?.toLowerCase() === article?.category[0]?.toLowerCase()
-    );
-  }
-
-  // 4. If still no match, fallback to any 2 articles
   if (relatedArticles.length === 0) {
     relatedArticles = otherArticles.slice(0, 2);
   } else {
@@ -49,9 +43,9 @@ const ArticlePage = () => {
               <Link
                 to={`/article/${encodeURIComponent(a.link)}`}
                 state={{ article: a, articles }}
-                key={a.id}
+                key={a.article_id}
               >
-                <ArticleCard article={a} key={a.id} />
+                <ArticleCard article={a} key={a.article_id} />
               </Link>
             ))}
           </div>

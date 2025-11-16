@@ -13,8 +13,8 @@ const Footer = () => {
           </NavLink>
         ))}
       </nav>
-      <p className="font-libre text-sm text-gray-600">
-        &copy; 2025 NewsToday. All rights reserved.
+      <p className="font-libre text-sm text-gray-500">
+        &copy; 2025 NewsToday by Shakirat. All rights reserved.
       </p>
     </footer>
   );

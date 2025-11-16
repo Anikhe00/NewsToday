@@ -3,10 +3,10 @@ import type { Article } from "../../interfaces";
 const NewsCard = ({ article }: { article: Article }) => {
   return (
     <article className="group w-full h-auto flex flex-col gap-3 cursor-pointer">
-      {article.imgUrl ? (
+      {article.image_url ? (
         <img
           className="w-full h-50 md:h-60 lg:h-60 object-cover rounded-md"
-          src={article.imgUrl}
+          src={article.image_url}
           alt={article.title}
         />
       ) : (
@@ -15,7 +15,7 @@ const NewsCard = ({ article }: { article: Article }) => {
         </div>
       )}
       <div className="flex flex-col gap-2">
-        <p className="group-hover:text-blue-500 text-[15px] font-libre font-bold text-gray-800">
+        <p className="group-hover:underline text-[15px] font-libre font-bold text-gray-800">
           {article.title}
         </p>
         <p className="text-sm font-libre truncate line-clamp-2 text-gray-500">

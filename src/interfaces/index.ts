@@ -1,12 +1,12 @@
 export interface Article {
-  id: string;
+  article_id: string;
   title: string;
   description: string | null;
-  imgUrl: string | null;
+  image_url: string | null;
   category: string[];
   pubDate: string;
-  sourceName: string;
-  author: string | null;
+  source_name: string;
+  creator: string[];
   link: string;
 }
 

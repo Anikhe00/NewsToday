@@ -52,10 +52,7 @@ const Header = () => {
       </header>
 
       {isMenuOpen && (
-        <aside
-          className="fixed backdrop-blur-sm transition-opacity duration-300 inset-0 bg-black/70 z-50 flex justify-end"
-          onClick={() => setIsMenuOpen(false)}
-        >
+        <aside className="fixed backdrop-blur-sm transition-opacity duration-300 inset-0 bg-black/70 z-50 flex justify-end">
           <div
             className={`absolute top-0 right-0 h-full w-11/12 bg-white shadow-xl flex flex-col gap-6
         transform transition-transform duration-300 ease-in-out

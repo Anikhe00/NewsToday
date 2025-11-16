@@ -12,7 +12,7 @@ const TrendingCard = ({
     <article
       className="relative flex flex-col p-5 lg:py-8 lg:pl-8 lg:pr-16 items-start justify-end w-full h-90 md:h-140 lg:h-140 bg-blue-50 bg-cover bg-center bg-no-repeat rounded-xl"
       style={{
-        backgroundImage: `url(${article.imgUrl})`,
+        backgroundImage: `url(${article.image_url})`,
       }}
     >
       <div className="absolute inset-0 bg-black/70 rounded-xl"></div>

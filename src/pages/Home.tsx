@@ -47,8 +47,7 @@ const Home = () => {
   };
 
   // Trending and other articles
-  // const trendingArticle = articles.find((a) => a.imgUrl);
-  const trendingArticle = articles[0];
+  const trendingArticle = articles.find((a) => a.image_url);
   const newsArticles = articles.filter((a) => a !== trendingArticle);
 
   return (
@@ -96,7 +95,7 @@ const Home = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-6">
               {newsArticles.map((article) => (
                 <Link
-                  key={article.id}
+                  key={article.article_id}
                   to={`/article/${encodeURIComponent(article.link)}`}
                   state={{ article, articles }}
                 >

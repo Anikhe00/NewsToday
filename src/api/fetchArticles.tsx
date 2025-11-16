@@ -13,9 +13,9 @@ export const fetchArticles = async (
   if (searchQuery && searchQuery.trim().length >= 3) {
     url = `${API_URL}/latest?apikey=${API_KEY}&q=${encodeURIComponent(
       searchQuery
-    )}&language=en`;
+    )}&country=ng,gb,us,ps,se&language=en&removeduplicate=1`;
   } else {
-    url = `${API_URL}/latest?apikey=${API_KEY}&language=en&category=${category}`;
+    url = `${API_URL}/latest?apikey=${API_KEY}&country=ng,gb,us,ps,se&language=en&category=${category}&removeduplicate=1`;
   }
 
   const res = await fetch(url);

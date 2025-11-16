@@ -6,8 +6,8 @@ const ArticleCard = ({ article }: { article: Article }) => {
   return (
     <article className="group w-full flex flex-row gap-3 cursor-pointer overflow-hidden items-center">
       <div className="flex-1 flex flex-col gap-2 overflow-hidden">
-        <p className="text-xs font-libre font-semibold text-blue-500">
-          {article.category}
+        <p className="text-xs font-libre font-semibold capitalize text-blue-500">
+          {article.category[0]}
         </p>
         <p className="group-hover:underline text-[15px] font-libre font-bold text-gray-800">
           {article.title}
@@ -19,7 +19,7 @@ const ArticleCard = ({ article }: { article: Article }) => {
       <div className="w-30 h-30 shrink-0 overflow-hidden rounded-md">
         <img
           className="w-full h-full object-cover"
-          src={article.imgUrl || placeholder}
+          src={article.image_url || placeholder}
           alt={article.title}
         />
       </div>

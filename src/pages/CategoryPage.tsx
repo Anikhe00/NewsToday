@@ -3,9 +3,14 @@ import { useParams, Link } from "react-router-dom";
 import type { Article } from "../interfaces";
 import { fetchArticles } from "../api/fetchArticles";
 import NewsCard from "../components/article/NewsCard";
+import { useEffect } from "react";
 
 const Category = () => {
   const { categoryName } = useParams<{ categoryName: string }>();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [categoryName]);
 
   const {
     data: articles = [],
@@ -33,7 +38,7 @@ const Category = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-6">
           {articles.map((article) => (
             <Link
-              key={article.id}
+              key={article.article_id}
               to={`/article/${encodeURIComponent(article.link)}`}
               state={{ article, articles }}
             >
