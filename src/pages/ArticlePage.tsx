@@ -29,7 +29,7 @@ const ArticlePage = () => {
   }
 
   return (
-    <div className="w-full h-auto flex flex-col gap-8 items-start justify-start">
+    <div className="max-w-[1200px] w-full h-auto flex flex-col gap-8 items-start justify-start">
       {article && <ArticleContent article={article} />}
 
       {/* Related Articles */}

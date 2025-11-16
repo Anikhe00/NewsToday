@@ -51,7 +51,7 @@ const Home = () => {
   const newsArticles = articles.filter((a) => a !== trendingArticle);
 
   return (
-    <div className="w-full h-auto flex flex-col gap-6 md:gap-8 lg:gap-8 items-start justify-start">
+    <div className="max-w-[1200px] w-full h-auto flex flex-col gap-6 md:gap-8 lg:gap-8 items-start justify-start">
       {/* Search */}
       <Search
         placeholder="Search for news, topics..."
