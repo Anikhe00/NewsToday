@@ -5,6 +5,7 @@ import { fetchArticles } from "../api/fetchArticles";
 import NewsCard from "../components/article/NewsCard";
 import { useEffect } from "react";
 import ErrorState from "../components/common/ErrorState";
+import Loading from "@/components/common/Loading";
 
 const Category = () => {
   const { categoryName } = useParams<{ categoryName: string }>();
@@ -30,7 +31,7 @@ const Category = () => {
       </h1>
 
       {isLoading ? (
-        <p className="text-gray-500 font-libre">Loading...</p>
+        <Loading msg={`Loading ${categoryName} articles...`} />
       ) : isError ? (
         <ErrorState errorMsg="Failed to load articles" />
       ) : articles.length === 0 ? (

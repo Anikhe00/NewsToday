@@ -8,6 +8,7 @@ import { useState } from "react";
 import { fetchArticles } from "../api/fetchArticles";
 import type { Article } from "../interfaces";
 import ErrorState from "../components/common/ErrorState";
+import Loading from "@/components/common/Loading";
 
 const categories = [
   "world",
@@ -69,7 +70,7 @@ const Home = () => {
 
       {/* Content */}
       {isLoading ? (
-        <p className="h-dvh text-gray-500 font-libre text-sm">Loading...</p>
+        <Loading msg="Loading articles..." />
       ) : isError ? (
         <ErrorState errorMsg="Failed to load articles" />
       ) : articles.length === 0 ? (
