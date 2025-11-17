@@ -8,7 +8,7 @@ const Footer = () => {
       <Logo />
       <nav className="flex flex-wrap gap-4 md:gap-5 lg:gap-5 items-center justify-center">
         {NavigationData.map((item) => (
-          <NavLink key={item.name} to={item.href}>
+          <NavLink key={item.name} to={item.href} noActive>
             {item.name}
           </NavLink>
         ))}
