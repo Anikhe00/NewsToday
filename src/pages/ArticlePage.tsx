@@ -8,7 +8,11 @@ import { useEffect } from "react";
 const ArticlePage = () => {
   const location = useLocation();
   const article = location.state?.article as Article | null;
-  const articles = location.state?.articles as Article[] | null;
+  let articles = location.state?.articles as Article[] | null;
+
+  if (!article) {
+    articles = [];
+  }
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });

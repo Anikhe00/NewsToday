@@ -1,13 +1,22 @@
 import type { Article } from "../../interfaces";
 import Button from "../common/Button";
+import { useNavigate } from "react-router-dom";
 
 const TrendingCard = ({
   article,
-  onClick,
+  articles,
 }: {
   article: Article;
-  onClick: () => void;
+  articles: Article[];
 }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/article/${encodeURIComponent(article.link)}`, {
+      state: { article, articles },
+    });
+  };
+
   return (
     <article
       className="relative flex flex-col p-5 lg:py-8 lg:pl-8 lg:pr-16 items-start justify-end w-full h-90 md:h-140 lg:h-140 bg-blue-50 bg-cover bg-center bg-no-repeat rounded-xl"
@@ -25,8 +34,8 @@ const TrendingCard = ({
           {article.description}
         </p>
         <Button
-          onClick={onClick}
           className="bg-blue-500 text-white hover:bg-blue-600 px-4 lg:px-6 py-3 "
+          onClick={handleClick}
         >
           Read More
         </Button>

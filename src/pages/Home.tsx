@@ -79,12 +79,7 @@ const Home = () => {
       ) : (
         <>
           {trendingArticle && (
-            <Link
-              to={`/article/${encodeURIComponent(trendingArticle.link)}`}
-              state={{ article: trendingArticle, articles }}
-            >
-              <TrendingCard article={trendingArticle} onClick={() => {}} />
-            </Link>
+            <TrendingCard article={trendingArticle} articles={articles} />
           )}
 
           <div className="w-full h-auto flex flex-col gap-6 items-start justify-start">
