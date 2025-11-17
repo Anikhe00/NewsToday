@@ -7,6 +7,7 @@ import { Link, useSearchParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { fetchArticles } from "../api/fetchArticles";
 import type { Article } from "../interfaces";
+import ErrorState from "../components/common/ErrorState";
 
 const categories = [
   "world",
@@ -70,9 +71,7 @@ const Home = () => {
       {isLoading ? (
         <p className="h-dvh text-gray-500 font-libre text-sm">Loading...</p>
       ) : isError ? (
-        <p className="h-dvh text-red-500 font-libre text-sm">
-          Failed to load articles
-        </p>
+        <ErrorState errorMsg="Failed to load articles" />
       ) : articles.length === 0 ? (
         <p className="h-dvh text-gray-500 font-libre text-sm">
           No articles found.
